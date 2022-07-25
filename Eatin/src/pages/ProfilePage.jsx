@@ -21,7 +21,6 @@ const ProfilePage = () => {
                 <IonList>
                     <IonItem>
                         <IonAvatar>
-                            <IonImg src={user.photoURL} />
                         </IonAvatar>
                     </IonItem>
                     <IonItem>
