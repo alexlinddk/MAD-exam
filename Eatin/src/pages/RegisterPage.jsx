@@ -8,7 +8,8 @@ import {
   IonList,
   IonButton,
 } from "@ionic/react"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { useHistory } from "react-router";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState();
@@ -16,15 +17,34 @@ const RegisterPage = () => {
   //const [confirmPassword, setConfirmPassword] = useState();
   // const [isOwner, setIsOwner] = useState();
   const auth = getAuth();
+  const history = useHistory();
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+  function Register(event) {
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in
+      console.log("Signed in!");
+      history.push(`restaurants`);
+    } else {
+      // User is signed out
+      console.log("Signet out!");
+    }
+  });
 
   return (
     <IonPage>
@@ -42,7 +62,7 @@ const RegisterPage = () => {
             <IonLabel position="floating">Confirm Password</IonLabel>
             <IonInput value={confirmPassword} clearInput required onIonChange={e => setConfirmPassword(e.detail.value)}></IonInput>
           </IonItem> */}
-          <IonButton expand="full" type="submit" onClick={createUserWithEmailAndPassword}>Register</IonButton>
+          <IonButton expand="full" type="submit" onClick={Register}>Register</IonButton>
           <IonButton expand="full" fill="clear" routerLink="/login">Log in</IonButton>
         </IonList>
       </IonContent>

@@ -28,12 +28,15 @@ import RestaurantDetailsPage from "./pages/RestaurantDetailPage"
 import ProfilePage from "./pages/ProfilePage"
 import EditProfilePage from "./pages/EditProfilePage"
 import NewRestaurantPage from "./pages/NewRestaurantPage"
+import RestaurantReviewsPage from "./pages/RestaurantReviewsPage"
+import EditAccountPage from "./pages/EditAccountPage"
 
 /* Firebase */
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
+
 
 
 
@@ -71,14 +74,20 @@ const App = () => (
         <Route exact path="/profile">
           <ProfilePage />
         </Route>
-        <Route exact path="/edit-profile">
+        <Route exact path="/profile/edit">
           <EditProfilePage />
+        </Route>
+        <Route exact path="/profile/account">
+          <EditAccountPage />
         </Route>
         <Route exact path="/new-restaurant">
           <NewRestaurantPage />
         </Route>
         <Route exact path="/restaurants/:id">
           <RestaurantDetailsPage />
+        </Route>
+        <Route exact path="/restaurants/:id/reviews">
+          <RestaurantReviewsPage />
         </Route>
         <Route exact path="/">
           <Redirect to="/restaurants" />

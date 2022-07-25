@@ -25,14 +25,19 @@ import { useHistory, useParams } from "react-router";
 import { getDatabase, ref } from "firebase/database";
 import { useEffect, useRef, useState } from "react";
 import { arrowForwardOutline, star, starHalf } from 'ionicons/icons'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper';
 
 import Rating from "../components/Rating";
 import OpeningHours from "../components/OpeningHours";
 
+import 'swiper/css';
+
 const RestaurantDetailsPage = () => {
     const [restaurant, setRestaurant] = useState({});
+    const [images, setImages] = useState([]);
+    const [openingHours, setOpeningHours] = useState([]);
 
-    // const history = useHistory();
     const params = useParams();
     const restaurantId = params.id;
 
@@ -40,7 +45,10 @@ const RestaurantDetailsPage = () => {
         const res = await fetch(`https://mad-exam-4e6cd-default-rtdb.firebaseio.com/restaurants/${restaurantId}.json`);
         const restaurantData = await res.json();
         setRestaurant(restaurantData);
+        setImages(restaurantData.images);
+        setOpeningHours(restaurantData.openingHours);
     }
+
 
     const openingDays = [
         "Monday",
@@ -51,83 +59,59 @@ const RestaurantDetailsPage = () => {
         "Saturday",
         "Sunday",
     ]
-    let openingHours = [
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-    ]
 
-    let ratings = [5, 5, 5, 5, 5]
-    const average = () => ratings.reduce((a, b) => a + b) / ratings.length;
 
-    const Rate = () => {
+    useEffect(() => {
+        loadData();
+    }, []);
 
-    }
-
-    const rate = simulateSwitch => {
-    switch (average) {
-        case (average <= 1): return <IonIcon icon={star} />
-        case (average <= 2): return <><IonIcon icon={star} /><IonIcon icon={star} /></>
-        case (average <= 3): return <><IonIcon icon={star} /><IonIcon icon={star} /></>
-        case (average <= 4): return <><IonIcon icon={star} /><IonIcon icon={star} /><IonIcon icon={star} /></>
-        case (average <= 5): return <><IonIcon icon={star} /><IonIcon icon={star} /><IonIcon icon={star} /><IonIcon icon={star} /></>
-        default: return <IonIcon icon={starHalf} />
-    }
-}
-
-useEffect(() => {
-    loadData();
-}, []);
-
-return (
-    <IonPage>
-        <IonContent>
-            <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <IonBackButton defaultHref="/" />
-                    </IonButtons>
-                    <IonTitle>Restaurant</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonList>
-                <IonImg src="https://gdkfiles.visitdenmark.com/files/484/208306_Restaurant_Mellemrum_Aarhus_RAISFOTO_7984.jpg?width=987" />
-                <OpeningHours />
-                <IonItem>
-                    {/* <Rating /> */}
-                    <IonGrid>
-                        <IonRow>
-                            <IonCol>
-                                {
-                                    simulateSwitch()
-                                    };
-                            </IonCol>
-                            <IonCol>
-
-                            </IonCol>
-                        </IonRow>
-                    </IonGrid>
-                </IonItem>
-                <IonRouterLink href="https://meny.dk/" target="_blank">
-                    <IonItem>
-                        <IonText>Menu</IonText>
-                        <IonIcon slot="end" icon={arrowForwardOutline} />
-                    </IonItem>
-                </IonRouterLink>
-                <IonRouterLink href="https://mehttps://www.booking.com/index.en-gb.html?aid=397656&label=duc511jc-1DCAEoggI46AdIM1gDaD2IAQGYAQm4ARfIAQ_YAQPoAQGIAgGoAgO4AvDrnZUGwAIB0gIkODhmNTllZTAtNGQ2OS00NjM3LTg3NTItNDYwMDAyZmQ5NzA52AIE4AIB&sid=3ca48b8ceae21224e652095afe39d496&keep_landing=1&sb_price_type=total&ny.dk/" target="_blank">
-                    <IonItem>
-                        <IonText>Book bord</IonText>
-                        <IonIcon slot="end" icon={arrowForwardOutline} />
-                    </IonItem>
-                </IonRouterLink>
-            </IonList>
-        </IonContent>
-    </IonPage>
-);
+    return (
+        <IonPage>
+            <IonContent>
+                <IonHeader>
+                    <IonToolbar>
+                        <IonButtons slot="start">
+                            <IonBackButton defaultHref="/" />
+                        </IonButtons>
+                        <IonTitle>{restaurant.name}</IonTitle>
+                    </IonToolbar>
+                </IonHeader>
+                <Swiper
+                    modules={[Autoplay]}
+                    autoplay={true}
+                >
+                    {images.map((image) => {
+                        return (
+                            <SwiperSlide>
+                                <IonImg src={image} />
+                            </SwiperSlide>
+                        );
+                    })}
+                </Swiper>
+                <IonList>
+                    <OpeningHours openingHours={openingHours} />
+                    <IonRouterLink href={restaurant.menuUrl} target="_blank">
+                        <IonItem>
+                            <IonText>Menu</IonText>
+                            <IonIcon slot="end" icon={arrowForwardOutline} />
+                        </IonItem>
+                    </IonRouterLink>
+                    <IonRouterLink href={restaurant.bookUrl} target="_blank">
+                        <IonItem>
+                            <IonText>Book table</IonText>
+                            <IonIcon slot="end" icon={arrowForwardOutline} />
+                        </IonItem>
+                    </IonRouterLink>
+                    <IonRouterLink href={`/restaurants/${restaurantId}/reviews`} >
+                        <IonItem>
+                            <IonText>Reviews</IonText>
+                            <IonIcon slot="end" icon={arrowForwardOutline} />
+                        </IonItem>
+                    </IonRouterLink>
+                </IonList>
+            </IonContent>
+        </IonPage>
+    );
 }
 
 export default RestaurantDetailsPage;

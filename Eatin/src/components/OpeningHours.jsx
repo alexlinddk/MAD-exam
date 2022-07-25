@@ -1,7 +1,8 @@
 import { IonAccordion, IonAccordionGroup, IonCol, IonGrid, IonItem, IonLabel, IonList, IonRow, IonText } from "@ionic/react";
+import { useState } from "react";
+import { useParams } from "react-router";
 
-const OpeningHours = () => {
-
+const OpeningHours = ({ openingHours }) => {
     const openingDays = [
         "Monday",
         "Tuesday",
@@ -10,16 +11,6 @@ const OpeningHours = () => {
         "Friday",
         "Saturday",
         "Sunday",
-    ]
-
-    let openingHours = [
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
-        "15:00 - 23:30",
     ]
 
     return (
@@ -34,7 +25,7 @@ const OpeningHours = () => {
                             {
                                 openingDays.map((day) => {
                                     return (
-                                        <IonItem>
+                                        <IonItem key={day.id}>
                                             <IonText>{day}</IonText>
                                         </IonItem>
 
@@ -46,7 +37,7 @@ const OpeningHours = () => {
                             {
                                 openingHours.map((hours) => {
                                     return (
-                                        <IonItem>
+                                        <IonItem key={hours.id}>
                                             <IonText>{hours}</IonText>
                                         </IonItem>
 

@@ -1,0 +1,131 @@
+{
+    "restaurants": [
+        {
+            "images": [
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-12-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-5-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-2-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-3-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-11-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-4-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-6-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-7-1024x683.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-8-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-9-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-10-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-13-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-14-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-15-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-16-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Frederikshoej-anx-1024x768.jpg"
+            ],
+            "name": "Frederikshøj anx",
+            "address": "Oddervej 19 - 21, 8000 Aarhus C",
+            "phone": "20 83 77 79",
+            "mail": "anx@frederikshoj.com",
+            "description": "Frederikshøj anx er en frokostrestaurant med smørrebrød som speciale. Det er sublim mad til en pris, som de fleste kan betale, var vurderingen, som en af vores madanmeldere er kommet med. Sandt nok. Her er smørrebrød på højeste niveau i Danmark.",
+            "openingHours": [
+                "Closed",
+                "Closed",
+                "11:00 - 15:00",
+                "11:00 - 15:00",
+                "11:00 - 15:00",
+                "11:00 - 15:00",
+                "Closed"
+            ],
+            "menuUrl": "https://frederikshoj.com/anx/in-house/",
+            "bookUrl": "https://www.bord-booking.dk/online_booking.php?restaurantId=70387"
+        },
+        {
+            "images": [
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/12/A-Siam-Sushi-1024x576.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/12/A-Siam-Sushi-2-1024x576.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/A-Siam-Sushi-i-Frederiksgade-i-A%CC%8Arhus-C-5-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/A-Siam-Sushi-i-Frederiksgade-i-A%CC%8Arhus-C-4-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/A-Siam-Sushi-i-Frederiksgade-i-A%CC%8Arhus-C-2-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/A-Siam-Sushi-i-Frederiksgade-i-A%CC%8Arhus-C-3-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/A-Siam-Sushi-i-Frederiksgade-i-A%CC%8Arhus-C-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/12/A-Siam-Sushi-3-1024x576.jpg"
+            ],
+            "name": "A+ Siam Sushi",
+            "address": "Frederiksgade 32, 8000 Aarhus C",
+            "phone": "86 13 62 70",
+            "mail": "kontakt@aplussiamsushi.dk",
+            "description": "Sushien består af friske råvarer af høj kvalitet. Kokkene laver altid først sushien, når du bestiller den. Risene har ikke været i køleskabet, men er frisklavet, hvilket er et klart plus.",
+            "openingHours": [
+                "12:00 - 21:30",
+                "12:00 - 21:30",
+                "12:00 - 21:30",
+                "12:00 - 21:30",
+                "12:00 - 22:30",
+                "12:00 - 22:30",
+                "12:00 - 21:30"
+            ],
+            "menuUrl": "http://restaurant.aplussiamsushi.dk/restaurant/menu/",
+            "bookUrl": "https://book.dinnerbooking.com/dk/da-DK/book/index/952/2"
+        },
+        {
+            "images": [
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-7-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-6-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-5-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-4-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-3-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-2-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-8-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-10-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-9-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/03/Restaurant-Ombord-11-1024x768.jpg"
+            ],
+            "name": "Restaurant Ombord",
+            "address": "Jægergårdsgade 71, 8000 Aarhus C",
+            "phone": "86 19 60 80",
+            "mail": "Info@restaurantombord.dk",
+            "description": "Ombord står for god mad, og menukortet er sammensat af kokke. De serverer klassikere med et tvist, der overrasker. A la carte skifter efter årstiden, men der er faste retter som Ombords carpaccio af oksemørbrad og rødbederimmet laks. Seks hovedretter er der at vælge mellem heriblandt dagens friske fangst, bøf bearnaise og Ombords oksekødsburger samt desserter.",
+            "openingHours": [
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "10:00 - 24:00",
+                "10:00 - 14:00"
+            ],
+            "menuUrl": "https://restaurantombord.dk/menu/",
+            "bookUrl": "https://booketbord.flexybox.com/(S(0a25zfsdou3r5irzki32gxmc))/Ombord"
+        },
+        {
+            "images": [
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Restaurant-MellemRum-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Restaurant-MellemRum-3-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-2-1-1024x576.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-7-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-5-1024x576.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Restaurant-MellemRum-2-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Restaurant-MellemRum-6-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-4-958x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-6-1024x768.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-8-1024x624.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2022/05/MellemRum-1-1024x693.jpg",
+                "https://spiseguidenaarhus.dk/wp-content/uploads/2021/02/Restaurant-MellemRum-5-1024x768.jpg"
+            ],
+            "name": "Restaurant MellemRum",
+            "address": "Fredens Torv 2, 8000 Aarhus C",
+            "phone": "86 17 18 38",
+            "mail": "info@restaurantmellemrum.dk",
+            "description": "Køkkenstilen er moderne. Det franske køkken kan klart smages, men ikke kun. Her er ingen dogmer, udover råvarerne skal være lokale, og maden skal smage godt og smage af det det er. Kokkene hos MellemRum laver mad på et højt niveau under ledelse af Mikkel Laursen, Årets kok 2016. Der er altid en Menu MellemRum og en Vegetarmenu bestående af fire retter at vælge mellem.",
+            "openingHours": [
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "17:00 - 24:00",
+                "Closed"
+            ],
+            "menuUrl": "https://restaurantmellemrum.dk/menu-restaurant-aarhus/",
+            "bookUrl": "https://restaurantmellemrum.dk/"
+        }
+    ]
+}
