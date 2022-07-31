@@ -17,7 +17,7 @@ const RestaurantList = ({ restaurants }) => {
                     <IonItem routerLink={`/restaurants/${restaurant.id}`} key={restaurant.id}>
                         <IonCard>
                             <IonCardHeader>
-                                <IonImg src={restaurant.images[0]} />
+                                <IonImg src={restaurant?.images[0]} />
                             </IonCardHeader>
                             <IonCardContent>
                                 <IonItem>

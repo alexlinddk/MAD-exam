@@ -35,7 +35,6 @@ import 'swiper/css';
 
 const RestaurantDetailsPage = () => {
     const [restaurant, setRestaurant] = useState({});
-    const [images, setImages] = useState([]);
     const [openingHours, setOpeningHours] = useState([]);
 
     const params = useParams();
@@ -45,7 +44,6 @@ const RestaurantDetailsPage = () => {
         const res = await fetch(`https://mad-exam-4e6cd-default-rtdb.firebaseio.com/restaurants/${restaurantId}.json`);
         const restaurantData = await res.json();
         setRestaurant(restaurantData);
-        setImages(restaurantData.images);
         setOpeningHours(restaurantData.openingHours);
     }
 
@@ -80,7 +78,7 @@ const RestaurantDetailsPage = () => {
                     modules={[Autoplay]}
                     autoplay={true}
                 >
-                    {images.map((image) => {
+                    {restaurant?.images.map((image) => {
                         return (
                             <SwiperSlide>
                                 <IonImg src={image} />
