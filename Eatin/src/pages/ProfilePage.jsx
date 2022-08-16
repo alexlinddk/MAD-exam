@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { IonAvatar, IonButton, IonContent, IonIcon, IonImg, IonItem, IonList, IonNavLink, IonPage, IonRouterLink, IonText } from "@ionic/react";
+import { IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonFabButton, IonHeader, IonIcon, IonImg, IonItem, IonList, IonNavLink, IonPage, IonRouterLink, IonText, IonTitle, IonToolbar } from "@ionic/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router";
 import { arrowForwardOutline } from "ionicons/icons";
 
@@ -29,29 +29,35 @@ const ProfilePage = () => {
     return (
         <IonPage>
             <IonContent>
-                <IonList>
-                    <IonItem>
-                        <IonAvatar>
-                        </IonAvatar>
-                    </IonItem>
-                    <IonItem>
-                    </IonItem>
-                    <IonRouterLink href={`/profile/edit`}>
-                        <IonItem>
+                <IonHeader>
+                    <IonToolbar>
+                        <IonRouterLink routerLink="/restaurants" class="ion-float-left">
+                            <FontAwesomeIcon icon={faChevronLeft} fontSize="32px" className="ion-padding" />
+                        </IonRouterLink>
+                    </IonToolbar>
+                </IonHeader>
+                <IonCard>
+                    <IonCardContent className="ion-text-center">
+                        <IonCardTitle>Profile</IonCardTitle>
+                        <IonCardHeader>
+                            <IonAvatar style={{ marginLeft: "auto", marginRight: "auto" }} className="ion-margin-bottom">
+                                <IonImg src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+                            </IonAvatar>
+                        </IonCardHeader>
+                        <IonItem routerLink={`/profile/edit`} lines="none" detail='false' className="ion-margin-bottom">
                             <IonText>Edit Profile</IonText>
-                            <IonIcon slot="end" icon={arrowForwardOutline} />
+                            <FontAwesomeIcon slot="end" icon={faChevronRight} />
                         </IonItem>
-                    </IonRouterLink>
-                    <IonRouterLink href={`/profile/account`}>
-                        <IonItem>
+                        <IonItem routerLink={`/profile/account`} lines="none" detail='false'>
                             <IonText>Edit Account</IonText>
-                            <IonIcon slot="end" icon={arrowForwardOutline} />
+                            <FontAwesomeIcon slot="end" icon={faChevronRight} fontSize="16px" />
                         </IonItem>
-                    </IonRouterLink>
-                    <IonButton onClick={handleSignOut}>
-                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                    </IonButton>
-                </IonList>
+                        <IonItem button="true" onClick={handleSignOut} color="danger" detail='false' style={{ borderRadius: 5, marginTop: 64 }} lines="none">
+                            <IonText>Log out</IonText>
+                            <FontAwesomeIcon icon={faArrowRightFromBracket} slot="end" />
+                        </IonItem>
+                    </IonCardContent>
+                </IonCard>
             </IonContent>
         </IonPage>
     );

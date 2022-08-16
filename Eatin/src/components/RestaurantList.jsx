@@ -14,21 +14,17 @@ const RestaurantList = ({ restaurants }) => {
         <IonList>
             {restaurants.map((restaurant) => {
                 return (
-                    <IonItem routerLink={`/restaurants/${restaurant.id}`} key={restaurant.id}>
-                        <IonCard>
-                            <IonCardHeader>
+                    <IonCard routerLink={`/restaurants/${restaurant?.id}`} key={restaurant.id}>
+                        <IonCardHeader style={{paddingTop: 0, paddingRight: 0, paddingLeft: 0}}>
+                            <div style={{maxHeight: 200, overflow: "hidden"}}>
                                 <IonImg src={restaurant?.images[0]} />
-                            </IonCardHeader>
-                            <IonCardContent>
-                                <IonItem>
-                                    <IonCardTitle>{restaurant.name}</IonCardTitle>
-                                </IonItem>
-                                <IonItem>
-                                    <IonText>{restaurant.address}</IonText>
-                                </IonItem>
-                            </IonCardContent>
-                        </IonCard>
-                    </IonItem>
+                            </div>
+                        </IonCardHeader>
+                        <IonCardContent>
+                            <IonCardTitle style={{paddingBottom: 13}}>{restaurant.name}</IonCardTitle>
+                            <IonText>{restaurant.address}</IonText>
+                        </IonCardContent>
+                    </IonCard>
                 )
             })}
         </IonList>

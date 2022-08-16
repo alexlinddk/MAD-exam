@@ -7,9 +7,19 @@ import {
   IonLabel,
   IonList,
   IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardTitle,
+  IonHeader,
+  IonCardHeader,
+  IonText,
+  IonToolbar,
+  IonRouterLink,
 } from "@ionic/react"
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useHistory } from "react-router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState();
@@ -49,22 +59,31 @@ const RegisterPage = () => {
   return (
     <IonPage>
       <IonContent>
-        <IonList>
-          <IonItem>
-            <IonLabel position="floating">Email</IonLabel>
-            <IonInput value={email} clearInput required onIonChange={e => setEmail(e.detail.value)}></IonInput>
-          </IonItem>
-          <IonItem>
-            <IonLabel position="floating">Password</IonLabel>
-            <IonInput value={password} clearInput required onIonChange={e => setPassword(e.detail.value)}></IonInput>
-          </IonItem>
-          {/* <IonItem>
-            <IonLabel position="floating">Confirm Password</IonLabel>
-            <IonInput value={confirmPassword} clearInput required onIonChange={e => setConfirmPassword(e.detail.value)}></IonInput>
-          </IonItem> */}
-          <IonButton expand="full" type="submit" onClick={Register}>Register</IonButton>
-          <IonButton expand="full" fill="clear" routerLink="/login">Log in</IonButton>
-        </IonList>
+      <IonHeader>
+          <IonToolbar>
+            <IonRouterLink routerLink="/restaurants" class="ion-float-left">
+              <FontAwesomeIcon icon={faChevronLeft} fontSize="32px" className="ion-padding" />
+            </IonRouterLink>
+          </IonToolbar>
+        </IonHeader>
+        <IonCard>
+          <IonCardContent className="ion-text-center">
+            <IonCardTitle>Register</IonCardTitle>
+            <IonCardHeader>
+              <IonItem className="ion-padding-end ion-padding-bottom">
+                <IonLabel position="floating">Email</IonLabel>
+                <IonInput type="email" value={email} clearInput required onIonChange={e => setEmail(e.target.value)}></IonInput>
+              </IonItem>
+              <IonItem className="ion-padding-end ion-padding-bottom">
+                <IonLabel position="floating">Password</IonLabel>
+                <IonInput type="password" value={password} clearInput required onIonChange={e => setPassword(e.target.value)}></IonInput>
+              </IonItem>
+            </IonCardHeader>
+            <IonButton expand="full" type="submit" onClick={Register}>Register</IonButton>
+            <IonText style={{ fontStyle: "italic" }}>or</IonText>
+            <IonButton expand="full" fill="clear" routerLink="/login">Log in</IonButton>
+          </IonCardContent>
+        </IonCard>
       </IonContent>
     </IonPage>
   )

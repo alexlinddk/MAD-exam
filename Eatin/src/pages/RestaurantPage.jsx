@@ -1,5 +1,6 @@
 import {
   IonContent,
+  IonFabButton,
   IonHeader,
   IonPage,
   IonRouterLink,
@@ -43,24 +44,21 @@ const RestaurantPage = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>{user ? user.displayName : null}</IonTitle>
-          {
-            !user ?
-              <IonRouterLink href="/login">
-                <FontAwesomeIcon icon={faArrowRightToBracket} />
-              </IonRouterLink>
-              :
-              <IonRouterLink href="/profile">
-                <FontAwesomeIcon icon={faUser} />
-              </IonRouterLink>
-          }
-
-        </IonToolbar>
-      </IonHeader>
-
       <IonContent>
+        <IonHeader>
+          <IonToolbar>
+            {
+              !user ?
+                <IonRouterLink routerLink="/login" class="ion-float-right">
+                  <FontAwesomeIcon icon={faArrowRightToBracket} fontSize="32px" className="ion-padding"/>
+                </IonRouterLink>
+                :
+                <IonRouterLink routerLink="/profile" class="ion-float-right">
+                  <FontAwesomeIcon icon={faUser} fontSize="32px" className="ion-padding"/>
+                </IonRouterLink>
+            }
+          </IonToolbar>
+        </IonHeader>
         <RestaurantList restaurants={restaurants} />
       </IonContent>
     </IonPage>
