@@ -11,7 +11,7 @@ import {
 import RestaurantList from "../components/RestaurantList";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faArrowRightToBracket, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const RestaurantPage = () => {
